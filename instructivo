@@ -1,0 +1,22 @@
+ --------------------------- MANUAL VI ------------------------------
+|                                                                    |
+|  R -> escribir reemplazando                                        |
+|  esc -> salir de mofo escritura                                    |
+|  i -> escribir insertando                                          |
+|  o -> abrir renglon abajo                                          |
+|  O -> abrir renglon arriba                                         |
+|  x -> borrar                                                       |
+|  dd -> borrar todo el renglon                                      |
+|  D -> borrar renglon dedse este espacio                            |
+|  :w -> guardar                                                     |                         
+|  :q -> salir                                                       |
+|  :wq -> guardar y salir                                            |
+|  /palabra -> buscar "palabra"                                      |
+|       |                                                            |
+|       |-- n -> buscar la siguiente                                 |
+|        -- N -> buscar la anterior                                  |
+|  :<numero> -> se va la linea que corresponda con el numero         |
+|  :$ -> se va a la ultima linea                                     |
+|                                                                    |
+ --------------------------------------------------------------------
+
