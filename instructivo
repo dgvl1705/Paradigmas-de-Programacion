@@ -10,6 +10,7 @@
 |  D -> borrar renglon dedse este espacio                            |
 |  :w -> guardar                                                     |                         
 |  :q -> salir                                                       |
+|  :q! -> salir sin guardar                                          |
 |  :wq -> guardar y salir                                            |
 |  /palabra -> buscar "palabra"                                      |
 |       |                                                            |
