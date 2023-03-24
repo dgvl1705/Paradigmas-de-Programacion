@@ -82,3 +82,9 @@ def say_hello(name):
     print("Welcome to Python Tutorials")
 
 say_hello("Diego")
+
+#=======================================================
+# Input permite obtener datos del usuario en prompter
+#=======================================================
+nombre=input("Dame tu nombre: ")
+print(
