@@ -49,13 +49,13 @@ print("Hola "); print("tu!")    # Se considera mala práctica
 # Usando paréntesis redondos, cuadrados o llaves
 # se puede escribir en varios renglones
 #================================================
-list = [1, 2, 3, 4,
+lista = [1, 2, 3, 4,
         5, 6, 7, 8,
         9, 10, 11, 12]
 
 matriz = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12] ]
 
-print(list)
+print(lista)
 print(matriz)
 
 #==================================================================
@@ -64,7 +64,7 @@ print(matriz)
 if 10>5:
     print("diez es mayor que cinco")
     print("otraidentación")
-for i in list:
+for i in lista:
     print(i)
     print("ok")
 if 10>5:
@@ -295,3 +295,151 @@ print(miprimeralista)
 #========================================================
 miprimeralista = [1, "Javier", 1.34, "Bosco", "Angel", "Abigail", True]
 print(miprimeralista)
+
+#========================================================
+# list: hacer una lista
+# range(i,j): secuencia de i hasta j-1
+#========================================================
+nums = list(range(1,61))
+
+for i in nums:
+    print(i)
+    
+#=======================================================
+# Incluir nuevos elementos en la lista
+#=======================================================
+nums.append(61)
+nums.append(62)
+nums.append(61)
+print(nums)
+
+#======================================================
+# Quitar elementos de la lista
+#======================================================
+i = 61
+del nums[i]
+print(nums)
+
+#=====================================================
+# Borrar la lista
+#=====================================================
+del nums
+
+#=====================================================
+# Sumar listas
+#=====================================================
+L1 = [1, 2, 3]
+L2 = [4, 5, 6]
+print(L1 + L2)
+
+#====================================================
+# Llenado a mano
+#====================================================
+potencial = []
+for i in range(0, 10000):
+    potencial.append(float(i))
+print(potencial[100])
+
+#===================================================
+# Generar una tupla con la lista
+#===================================================
+potencial = tuple(potencial)
+print(potencial[100])
+
+#==================================================
+# Condicionales
+#==================================================
+precio = 50
+#-------------------
+# Si esto...
+#-------------------
+if precio < 50:
+    print("El precio es menor que 50")
+#---------------------------
+# Si no... si esto otro...
+#---------------------------
+elif precio > 50:
+    print("El precio es mayor a 50")
+#-------------------------------------
+# Si nada de lo anterior
+#-------------------------------------
+else:
+    print("El precio es 50")
+
+precio = 50
+cantidad = 5
+total =  precio*cantidad
+#==================================
+# Condicionales anidados
+#==================================
+if total > 100:
+    if total > 500:
+        print("Total es mayor que 500")
+    else:
+        if total < 500  and  total > 400:
+            print("Total es mayor que 500 pero menor que 400")
+        elif total < 500  and total > 300:
+            print("Total entre 300 y 500")
+        else:
+            print("Total entre 100 y 300")
+
+#----------------------------------------
+# Condicional de igualdad son ==
+#----------------------------------------
+elif total == 100:
+    print("Total  es 100")
+else:
+    print("Total menor que 100")
+
+#==============================================
+# Contador mientras la condición es verdadera
+#==============================================
+num = 0
+while num < 5:
+    num = num + 1
+    print('num = ', num)
+
+num = 0
+while num < 5:
+    num += 1                        # um += 1 es lo mismo  que num = num + 1
+    print('num = ', num)
+    if num == 3:                    # condición  antes de  salir del bucle       
+        break
+
+num = 0
+while num < 5:
+    num += 1
+    if num > 3:
+        continue                    # evitar lo que sigue,  continuar con las iteraciones
+    print('num = ', num)
+
+#====================================
+# Bucle sobre lista
+#====================================
+nums = [10, 20, 30, 40 ,50]
+for i in nums:
+    print(i)
+
+
+#====================================
+# Bucle sobre un string
+#====================================
+for char in 'Hello':
+    print(char)
+
+
+#====================================
+# Bucle sobre un diccionario
+# items = elementos
+#====================================
+numNames = {1: 'One', 2: 'Two', 3: 'Three'}
+for pair in numNames.items():
+    print(pair)
+
+#=====================================
+# Bucle sobre diccionario
+# key = llave
+# value = valor
+#=====================================
+for k,v in numNames.items():
+    print("key = ", k, ", value = ", v)
