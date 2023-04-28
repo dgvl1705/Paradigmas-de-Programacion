@@ -44,7 +44,7 @@ class Curva:
         for i in range(0, self.n):
             self.tup = (self.x[i],)
             for ii in range(1, self.dim):
-                self.tup = self.tup + (self.x[i+ii*self.n], )
+                self.tup = self.tup + (self.x[i+ii*self.n],)
             print(self.formato % self.tup)
 
     #========================
@@ -52,12 +52,12 @@ class Curva:
     #========================
     def longitud(self) -> None:
         t:np.float64 = 0.0
-        for i in range(0, self.n):
+        for i in range(0,self.n):
             ip1 = i+1
             if i == self.n-1:
                 ip1 = 0
             d:np.float64 = (self.x[ip1]-self.x[i])**2
-            for j in range(1, self.dim):
+            for j in range(1,self.dim):
                 d += (self.x[ip1+j*self.n]-self.x[i+j*self.n])**2
             t +=  d**0.5
             self.l.append(t)
@@ -67,7 +67,7 @@ class Curva:
     #===========================
     # Interpolación
     #===========================
-    def interpolacion(self, p:int=0, r:float=0.0) -> list:
+    def interpolacion(self,p:int=0,r:float=0.0) -> list:
         """ r es el parámetro sobre la curva [0,1)
             p es la suavidad de la curva """
         
@@ -80,12 +80,12 @@ class Curva:
         # Interpolación lineal C0
         #==========================
         if p == 0:
-            ip1:no.int32 = i+1
+            ip1:np.int32 = i+1
             if i == self.n-1:
                 ip1 = 0
             xi.append(a*self.x[ip1] + (1.0-a)*self.x[i])
-            for j in range(1, self.dim):
-                xi.append(a*self.x[ip1+j*self.n]+(1.0)*self.x[i+j*self.n])
+            for j in range(1,self.dim):
+                xi.append(a*self.x[ip1+j*self.n]+(1.0-a)*self.x[i+j*self.n])
 
 
         #============================
@@ -147,9 +147,9 @@ class Curva:
             z:np.float64 = 1.0+a*a*u12*(-15.0+a*(-35.0+a*(63.0+a*(-25.0))))
             zp1:np.float64 = 1.0+ap1*ap1*u12*(-15.0+ap1*(-35.0+ap1*(63.0+ap1*(-25.0))))
             zp2:np.float64 = -4.0+u12*ap2*(225.0+ap2*(-367.5+ap2*(272.5+ap2*(-94.5+12.5*ap2))))
-            zp3:np.float64 = 18.0+u12*ap3*(-495.0+ap3*(382.5+ap3*(-156.5+ap3*(31.5-2.5*ap3))))
+            zp3:np.float64 = 18.0+u12*ap3*(-459.0+ap3*(382.5+ap3*(-156.5+ap3*(31.5-2.5*ap3))))
             zm1:np.float64 = -4.0+u12*am1*(225.0+am1*(-367.5+am1*(272.5+am1*(-94.5+12.5*am1))))
-            zm2:np.float64 = 18.0+u12*am2*(-495.0+am2*(382.5+am2*(-156.5+am2*(31.5-2.5*am2))))
+            zm2:np.float64 = 18.0+u12*am2*(-459.0+am2*(382.5+am2*(-156.5+am2*(31.5-2.5*am2))))
             xi.append(zp1*self.x[ip1]+z*self.x[i]+zp2*self.x[ip2]+zp3*self.x[ip3]+zm1*self.x[im1]+zm2*self.x[im2])
             for j in range(1, self.dim):
                 xi.append(zp1*self.x[ip1+j*self.n]+z*self.x[i+j*self.n]+zp2*self.x[ip2+j*self.n]+zp3*self.x[ip3+j*self.n]+zm1*self.x[im1+j*self.n]+zm2*self.x[im2+j*self.n])
