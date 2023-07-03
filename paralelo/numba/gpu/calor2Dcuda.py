@@ -13,7 +13,7 @@ n = np.array([512,512])
 # Tamaño del dominio (menor que uno)
 L = np.array([1.0,1.0])
 # Constante de difusión
-k = 0.2
+kd = 0.2
 # Pasos de tiempo
 pasos = 1000
 #================================================
@@ -22,7 +22,7 @@ pasos = 1000
 dx = L/n
 udx2 = 1.0/(dx*dx)
 # Paso de tiempo
-dt = 0.25*(min(dx[0],dx[1])**2)/k
+dt = 0.25*(min(dx[0],dx[1])**2)/kd
 print("dt = ",dt)
 # Total de celdas
 nt = n[0]*n[1]
